@@ -40,7 +40,7 @@ export default function Home({ preview, textWithDotPoints }) {
             <div className="ic-info-section-columns">
               <div className="ic-info-section-columns__column">
                 <div className="ic-info-section-copy">
-                  {documentToReactComponents(textWithDotPoint.body.json)}
+                  {documentToReactComponents(textWithDotPoint?.body?.json)}
                 </div>
               </div>
             </div>
