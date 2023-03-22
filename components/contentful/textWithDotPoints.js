@@ -21,14 +21,22 @@ function extractTextWithDotPointsEntries(fetchResponse) {
 export async function getTextWithDotPointsForHome(preview) {
   const entries = await fetchGraphQL(
     `query {
-      textWithDotPointsCollection(preview: ${
-        preview ? "true" : "false"
-      }, limit: 1) {
-        items {
-          ${TEXT_WITH_DOT_POINTS_CONTENT_GRAPHQL_FIELDS}
+        textWithDotPointsCollection {
+          items {
+            name
+            heading
+            ctaText
+            ctaUrl
+            ctaVisible
+            body {
+              json
+            }
+            dotPoints {
+              json
+            }
+          }
         }
-      }
-    }`,
+      }`,
     preview
   );
   return extractTextWithDotPointsEntries(entries);
