@@ -23,17 +23,7 @@ export async function getTextWithDotPointsForHome(preview) {
     `query {
         textWithDotPointsCollection {
           items {
-            name
-            heading
-            ctaText
-            ctaUrl
-            ctaVisible
-            body {
-              json
-            }
-            dotPoints {
-              json
-            }
+            ${TEXT_WITH_DOT_POINTS_CONTENT_GRAPHQL_FIELDS}
           }
         }
       }`,
