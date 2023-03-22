@@ -21,7 +21,7 @@ function extractTextWithDotPointsEntries(fetchResponse) {
 export async function getTextWithDotPointsForHome(preview) {
   const entries = await fetchGraphQL(
     `query {
-        textWithDotPointsCollection {
+        textWithDotPointsCollection() {
           items {
             name
             heading
